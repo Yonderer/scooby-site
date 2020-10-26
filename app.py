@@ -1,14 +1,17 @@
 """Flask App Project."""
 
-from flask import Flask, jsonify
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
 @app.route('/')
-def index():
-    """Return homepage."""
-    json_data = {'Hello': 'World!'}
-    return jsonify(json_data)
+def home():
+    return render_template('pages/placeholder.home.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('pages/placeholder.about.html')
 
 
 if __name__ == '__main__':
